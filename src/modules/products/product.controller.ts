@@ -10,7 +10,6 @@ import {
 import { ProductService } from './product.service';
 import { ProductChangesDto, ProductQueryDto } from './dto/product-query.dto';
 import { ApiTags, ApiQuery, ApiParam, ApiBearerAuth } from '@nestjs/swagger';
-import { AuthGuard } from '@nestjs/passport';
 
 @ApiTags('Products')
 @ApiBearerAuth('User-JWT')
