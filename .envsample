@@ -1,10 +1,4 @@
-ENV=LOCAL
-NODE_ENV=dev
-MONGO_URI=mongodb://mongo:27017/urlshortenerdb
-MONGO_DB_NAME=shorted_url_db
-REDIS_URL=redis://redis:6379
-BASE_URL=https://short.ly
+DATABASE_URL="postgresql://postgres:password@postgres_db:5432/nestdb?schema=public"
+JWT_SECRET=your-secret-key
+JWT_EXPIRES_IN=1h
 PORT=3000
-
-JWT_SECRET=super_secret_jwt_key
-JWT_EXPIRES_IN=30m

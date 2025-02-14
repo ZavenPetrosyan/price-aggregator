@@ -1,14 +1,15 @@
-# Base Stage
-FROM node:18 as base
+FROM node:22 as base
 
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install
+RUN npm install --legacy-peer-deps
+
 COPY . .
-EXPOSE 3005
+EXPOSE 3000
 
 RUN npm install -g @nestjs/cli
+
 FROM base AS dev
 CMD ["npm", "run", "start:debug"]
 
