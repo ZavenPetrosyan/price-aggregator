@@ -6,7 +6,10 @@ import { createHash } from 'crypto';
 
 @Injectable()
 export class AuthService {
-  constructor(private prisma: PrismaService, private jwtService: JwtService) {}
+  constructor(
+    private prisma: PrismaService,
+    private jwtService: JwtService,
+  ) {}
 
   private hashPassword(password: string): string {
     return createHash('sha256').update(password).digest('hex');
@@ -28,7 +31,7 @@ export class AuthService {
           email: `${username}@example.com`, // 🔹 Temporary fix
           password: hashedPassword,
         },
-      });        
+      });
 
       console.log(`New user created: ${username}`);
     } else {

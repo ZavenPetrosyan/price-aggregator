@@ -1,0 +1,13 @@
+{
+    "products": [
+      {
+        "id": "2",
+        "name": "Product B",
+        "description": "Sample product from Provider 2",
+        "price": 200.0,
+        "currency": "EUR",
+        "availability": false
+      }
+    ]
+  }
+  

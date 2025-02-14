@@ -15,3 +15,12 @@ model User {
   createdAt DateTime @default(now())
 }
 
+model Product {
+  id          String  @id @default(uuid())
+  name        String
+  description String?
+  price       Float
+  currency    String
+  availability Boolean
+  lastUpdated DateTime @updatedAt
+}

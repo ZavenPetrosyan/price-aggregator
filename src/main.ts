@@ -1,9 +1,9 @@
+import * as dotenv from 'dotenv';
+import helmet from 'helmet';
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { json, urlencoded } from 'express';
-import * as dotenv from 'dotenv';
-import helmet from 'helmet';
 
 import { AppModule } from './app.module';
 
