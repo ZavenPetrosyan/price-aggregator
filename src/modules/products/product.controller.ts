@@ -5,12 +5,15 @@ import {
   Param,
   UsePipes,
   ValidationPipe,
+  UseGuards,
 } from '@nestjs/common';
 import { ProductService } from './product.service';
 import { ProductChangesDto, ProductQueryDto } from './dto/product-query.dto';
-import { ApiTags, ApiQuery, ApiParam } from '@nestjs/swagger';
+import { ApiTags, ApiQuery, ApiParam, ApiBearerAuth } from '@nestjs/swagger';
+import { AuthGuard } from '@nestjs/passport';
 
 @ApiTags('Products')
+@ApiBearerAuth('User-JWT')
 @Controller('products')
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
@@ -24,8 +27,7 @@ export class ProductController {
     description: 'ISO timestamp',
   })
   async getProductChanges(@Query() filters: ProductChangesDto) {
-    const result = await this.productService.getProductChanges(filters.since);
-    return result;
+    return this.productService.getProductChanges(filters.since);
   }
 
   @Get()
